@@ -1,0 +1,7 @@
+networkx
+numpy
+qiskit
+qiskit-aer
+streamlit
+plotly
+scipy
