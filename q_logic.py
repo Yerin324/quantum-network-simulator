@@ -76,8 +76,9 @@ def build_sir_quantum_circuit(adj_matrix, current_states, alpha, beta, gamma):
         # [핵심 피드백 적용] 위상(Phase) 차이를 확률(Amplitude) 차이로 변환하는 간섭(Interference) 게이트 추가
         # Rzz 게이트로 비틀어진 위상을 현실의 확률 통계에 반영하기 위해 Rx 게이트를 추가 인가합니다.
         for i in range(num_nodes):
-            q_idx_2_i = i * 2 + 1
-            qc.rx(gamma / 2, q_idx_2_i)
+            if current_states[i] == STATE_S:  # ★ 핵심: I나 R 상태인 노드가 S로 되돌아가는 오버플로우 방지
+                q_idx_2_i = i * 2 + 1
+                qc.rx(gamma / 2, q_idx_2_i)
             
     qc.barrier()
     
