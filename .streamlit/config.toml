@@ -1,0 +1,7 @@
+[theme]
+base="dark"
+primaryColor="#00FFCC" # 사이버펑크 느낌의 네온 민트색
+backgroundColor="#0A0E17" # 아주 짙은 남색/검정
+secondaryBackgroundColor="#1A202C"
+textColor="#E2E8F0"
+font="sans serif"
